@@ -8,16 +8,21 @@
     </head>
     
     <body>
-        <section class="theme-container">
+        <h1>Alex's Habits</h1>
+        <!-- <section class="theme-container">
             <button class="theme" id="theme">theme button</button>
-        </section>
+        </section> -->
         
-        <h1>A habit tracker will go here.</h1>
-        <section class="habit-container">
+        <section class="habit-container" id="water">
             <div class="habit">
-                <h3>Water Intake</h3>
-                <p id="demo">No water</p>
-                <button type="button" onclick="myFunction()">Try it</button>
+                <h1>Water Intake</h1>
+                <p id="goal">Goal:</p>
+                <p>2.5L</p>
+                <p>Current Progress:</p><p id="current">0mL</p>
+                <p id="progress"></p>
+                <button type="button" onclick="increaseProgress()">Drink</button>
+                <button type="button">Edit</button>
+                <button type="reset" onclick="reset()">Reset</button>
             </div>
         </section>
     

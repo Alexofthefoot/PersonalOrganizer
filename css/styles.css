@@ -4,7 +4,18 @@ body {
 }
 
 h1 {
-    color: #3498db;
+    color: black;
 }
 
-/* Add more styles as needed */
+.habit-container {
+    padding: 5px;
+}
+
+/* This is for the water section */
+section#water {
+    background-color: lightblue;
+}
+
+section#water h1 {
+    color: #3498db;
+}
