@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8">
         <title>Habit Tracker</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script defer src="js/main.js"></script> <!-- defer means it will load after the body -->
     </head>
+    
     <body>
+        <section class="theme-container">
+            <button class="theme" id="theme">theme button</button>
+        </section>
+        
         <h1>A habit tracker will go here.</h1>
-
+        <section class="habit-container">
+            <div class="habit">
+                <h3>Water Intake</h3>
+                <p id="demo">No water</p>
+                <button type="button" onclick="myFunction()">Try it</button>
+            </div>
+        </section>
+    
     </body>
 </html>
