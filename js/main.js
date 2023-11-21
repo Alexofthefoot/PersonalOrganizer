@@ -35,11 +35,11 @@
     }
 
     //adjust display
-    document.getElementById("current").innerHTML = waterDisplay + waterIncrement;
+    document.getElementById("progress").innerHTML = waterDisplay + waterIncrement;
 
     //Check if goal has been reached
     if (waterProgress >= waterGoal) {
-      document.getElementById("current").innerHTML = waterDisplay + waterIncrement + " Goal Reached!";
+      document.getElementById("reachgoal").innerHTML = "Goal Reached, great job!";
 
     }
   }

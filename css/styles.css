@@ -9,6 +9,7 @@ h1 {
 
 .habit-container {
     padding: 5px;
+    border-radius: 15px;
 }
 
 /* This is for the water section */
