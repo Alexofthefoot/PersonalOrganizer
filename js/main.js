@@ -18,15 +18,18 @@
  function closeForm() {  
     var goalInput = document.getElementById("form-goal").value;
     if (goalInput != null) {
-      waterGoal = goalInput;
+      waterGoal = parseInt(goalInput);
+      console.log("A is:" + typeof waterGoal)
     }
     var progInput = document.getElementById("form-prog").value;
     if (progInput != null) {
-      waterProgress = progInput;
+      waterProgress = parseInt(progInput);
+      console.log("B is:" + typeof waterProgress)
     }
     var incrInput = document.getElementById("form-incr").value;
     if (incrInput != null) {
-      standardIncrement = incrInput;
+      standardIncrement = parseInt(incrInput);
+      console.log("C is:" + typeof standardIncrement)
     }
     //hide form
     document.getElementById("water-form").style.display = "none";
@@ -46,7 +49,7 @@
 
   // Progress is increased by a standard increment
   function increaseProgress() {
-    waterProgress += standardIncrement;
+    waterProgress = waterProgress + standardIncrement;
     displayProgress();
   }
 
@@ -64,7 +67,7 @@
   function displayProgress() {
     //set initial values
     waterIncrement = "mL";
-    waterDisplay = waterProgress;
+    var waterDisplay = waterProgress;
     //check if mL or L
     if (waterProgress > 999) {
       waterIncrement = "L"
@@ -75,6 +78,9 @@
     //Check if goal has been reached
     if (waterProgress >= waterGoal) {
       document.getElementById("reachgoal").innerHTML = "Goal Reached, great job!";
+    }
+    else {
+      document.getElementById("reachgoal").innerHTML = "";
     }
   }
 
