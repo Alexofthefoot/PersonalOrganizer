@@ -1,16 +1,20 @@
+  localStorage.setItem("lastname", "Smith");
   var waterGoal = 2500;
   var waterProgress = 0; //store value in mL's, change the increment to L as needed
   var standardIncrement = 250;
   
-  // TODO: in progress 
+  function showForm() {
+
+  }
+
   function editInformation(val) {
+    //show form
+    document.getElementById("water-form").style.display = "inline";
+
     //set watergoal
     //set standard increment
     //set water progress
   }
-
-
-
 
   // Changes what is displayed on the page
   function displayGoal() {
@@ -47,4 +51,7 @@
   function reset() {
     waterProgress = 0;
     displayProgress();
+    // hide the form
+    document.getElementById("water-form").style.display = "none";
+
   }

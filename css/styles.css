@@ -20,3 +20,7 @@ section#water {
 section#water h1 {
     color: #3498db;
 }
+
+form {
+    display: none;
+}

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Habit Tracker</title>
         <link rel="stylesheet" href="css/styles.css">
-        <script defer src="js/main.js"></script> <!-- defer means it will load after the body -->
+        <script defer src="js/main.js"></script> <!-- it will load after the body -->
     </head>
     
     <body>
@@ -21,10 +21,20 @@
                 <p>Current Progress:</p><p id="progress">0mL</p>
                 <p id="reachgoal"></p>
                 <button type="button" onclick="increaseProgress()">Drink</button>
-                <button type="button">Edit this habit</button>
+                <button type="button" onclick="editInformation()">Edit this habit</button>
                 <button type="reset" onclick="reset()">Reset</button>
+                <form id="water-form">
+                    <p>This is the edit area! It is in progress.</p>
+                    <label for="goal">Goal (in mL):</label><br>
+                    <input type="number" id="goal" name="goal" min="0"><br>
+                    <label for="prog">Progress:</label><br>
+                    <input type="number" id="prog" name="prog" min="0">
+                    <label for="incrval">Increment by:</label>
+                    <input type="number" id="incrval" min="0">
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </section>
-    
+
     </body>
 </html>
