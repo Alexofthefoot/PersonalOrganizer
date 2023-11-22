@@ -23,7 +23,7 @@
                 <p id="reachgoal"></p>
                 
                 <button type="button" onclick="increaseProgress()">Drink</button>
-                <button type="button" onclick="editInformation()">Edit this habit</button>
+                <button type="button" onclick="openForm()">Edit this habit</button>
                 <button type="reset" onclick="reset()">Reset</button>
                 <form id="water-form">
                     <p>This is the edit area! It is in progress.</p>
@@ -33,7 +33,7 @@
                     <input type="number" id="form-prog" name="prog" min="0"><br>
                     <label for="form-incr">Increment by:</label><br>
                     <input type="number" id="form-incr" min="0"><br>
-                    <button type="submit">Submit</button>
+                    <button type="button" onclick="closeForm()">Submit</button>
                 </form>
             </div>
         </section>
