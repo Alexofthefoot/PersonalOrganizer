@@ -10,10 +10,13 @@
   function editInformation(val) {
     //show form
     document.getElementById("water-form").style.display = "inline";
+    //set default values based on
+    document.getElementById("form-goal").value = waterGoal;
+    document.getElementById("form-prog").value = waterProgress;
+    document.getElementById("form-incr").value = standardIncrement;
 
-    //set watergoal
-    //set standard increment
-    //set water progress
+    // Adjust values based on input
+  
   }
 
   // Changes what is displayed on the page

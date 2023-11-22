@@ -16,21 +16,23 @@
         <section class="habit-container" id="water">
             <div class="habit">
                 <h1>Water Intake</h1>
-                <p id="goal">Goal:</p>
-                <p>2.5L</p>
+                <p>Goal:</p>
+                <p id="goal">2.5L</p>
+
                 <p>Current Progress:</p><p id="progress">0mL</p>
                 <p id="reachgoal"></p>
+                
                 <button type="button" onclick="increaseProgress()">Drink</button>
                 <button type="button" onclick="editInformation()">Edit this habit</button>
                 <button type="reset" onclick="reset()">Reset</button>
                 <form id="water-form">
                     <p>This is the edit area! It is in progress.</p>
-                    <label for="goal">Goal (in mL):</label><br>
-                    <input type="number" id="goal" name="goal" min="0"><br>
-                    <label for="prog">Progress:</label><br>
-                    <input type="number" id="prog" name="prog" min="0">
-                    <label for="incrval">Increment by:</label>
-                    <input type="number" id="incrval" min="0">
+                    <label for="form-goal">Goal (in mL):</label><br>
+                    <input type="number" id="form-goal" name="goal" min="0"><br>
+                    <label for="form-prog">Current Progress:</label><br>
+                    <input type="number" id="form-prog" name="prog" min="0"><br>
+                    <label for="form-incr">Increment by:</label><br>
+                    <input type="number" id="form-incr" min="0"><br>
                     <button type="submit">Submit</button>
                 </form>
             </div>
