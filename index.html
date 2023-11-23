@@ -9,7 +9,7 @@
     
     <body>
         <h1>Alex's Habits</h1>
-        <!-- <section class="theme-container">
+        <!-- <section>
             <button class="theme" id="theme">theme button</button>
         </section> -->
         
@@ -23,7 +23,7 @@
                 <p id="reachgoal"></p>
                 
                 <button type="button" onclick="increaseProgress()">Drink</button>
-                <button type="button" onclick="openForm()">Edit this habit</button>
+                <button type="button" onclick="openForm()">Edit</button>
                 <button type="reset" onclick="reset()">Reset</button>
                 <form id="water-form">
                     <p>This is the edit area! It is in progress.</p>
@@ -36,6 +36,15 @@
                     <button type="button" onclick="closeForm()">Submit</button>
                 </form>
             </div>
+        </section>
+
+        <section class="habit-container" id="sleep">
+            <h1>Sleep & Dreams</h1>
+                <p>Goal:</p>
+                <p id="goal">8hr</p>
+
+                <p>Actual:</p><p></p>
+                <p id="reachgoal"></p>
         </section>
 
     </body>

@@ -16,11 +16,18 @@ h1 {
 section#water {
     background-color: lightblue;
 }
-
 section#water h1 {
     color: #3498db;
 }
 
 form {
     display: none;
+}
+
+/* This is for the sleep section */
+section#sleep {
+    background-color: lavender;
+}
+section#sleep h1 {
+    color: rgb(155, 92, 238);
 }

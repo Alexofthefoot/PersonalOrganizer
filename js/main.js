@@ -1,4 +1,5 @@
   localStorage.setItem("lastname", "Smith");
+  
   var waterGoal = 2500;
   var waterProgress = 0; //store value in mL's, change the increment to L as needed
   var standardIncrement = 250;
@@ -11,8 +12,6 @@
     document.getElementById("form-prog").value = waterProgress;
     document.getElementById("form-incr").value = standardIncrement;
   }
-
-  // This might help: https://javascript.info/formdata
 
   // Update stored data based on form input. If blank, makes no change
  function closeForm() {  
