@@ -31,3 +31,11 @@ section#sleep {
 section#sleep h1 {
     color: rgb(155, 92, 238);
 }
+
+/* This is for the health section */
+section#health {
+    background-color: rgb(222, 136, 165);
+}
+section#health h1 {
+    color: rgb(178, 63, 63);
+}

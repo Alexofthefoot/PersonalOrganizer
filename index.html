@@ -33,18 +33,36 @@
                     <input type="number" id="form-prog" name="prog" min="0"><br>
                     <label for="form-incr">Increment by:</label><br>
                     <input type="number" id="form-incr" min="0"><br>
-                    <button type="button" onclick="closeForm()">Submit</button>
+                    <button type="button" onclick="closeForm()">Done</button>
                 </form>
             </div>
         </section>
 
+        <!-- Needs: # of hours, time sleep/wake, sleep quality, dream y/n, nap -->
         <section class="habit-container" id="sleep">
             <h1>Sleep & Dreams</h1>
                 <p>Goal:</p>
                 <p id="goal">8hr</p>
 
-                <p>Actual:</p><p></p>
-                <p id="reachgoal"></p>
+                <label for="sleep-hours">Slept how many hours?</label><br>
+                <input type="number" id="sleep-hours" min="0">
+                <p>Actual:</p><p>9hr</p>
+                <p>How was your sleep quality?</p>
+            
+                <input type="radio" id="bad-sleep" name="sleep-quality" value="bad">
+                <label for="bad-sleep">Bad</label><br>
+                <input type="radio" id="ok-sleep" name="sleep-quality" value="ok">
+                <label for="ok-sleep">Ok/good</label><br>
+                <input type="radio" id="good-sleep" name="sleep-quality" value="great">
+                <label for="good-sleep">Great</label><br><br>
+
+                <input type="submit" value="Submit">
+        </section>
+
+        <section class="habit-container" id="health">
+            <h1>Health & Activity</h1>
+                <p>Goal:</p>
+
         </section>
 
     </body>

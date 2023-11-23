@@ -10,3 +10,11 @@ Goals:
 5) Saving to local storage
 6) Tracking streaks
 7) Visualize with charts
+
+
+1) Water 
+2) Sleep
+3) Medication
+4) Skincare (am/pm)
+5) Calorie intake
+     
