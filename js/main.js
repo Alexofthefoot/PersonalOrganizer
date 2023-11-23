@@ -1,5 +1,5 @@
   localStorage.setItem("lastname", "Smith");
-  
+
   var waterGoal = 2500;
   var waterProgress = 0; //store value in mL's, change the increment to L as needed
   var standardIncrement = 250;
@@ -36,16 +36,6 @@
     displayGoal();
   }
 
-  // document.getElementById("water-form").onsubmit = function(e){
-  //   var fieldValue = document.getElementByID("username").value;
-  //   if(fieldValue == null || fieldValue == ""){
-  //     // the field was empty. Stop form submission
-  //     e.preventDefault();
-  //     // Now tell the user something went wrong
-  //     alert("you must enter a username");
-  //     }
-  //   }
-
   // Progress is increased by a standard increment
   function increaseProgress() {
     waterProgress = waterProgress + standardIncrement;
@@ -65,15 +55,15 @@
   // Updates what is displayed on the page
   function displayProgress() {
     //set initial values
-    waterIncrement = "mL";
+    waterUnit = "mL";
     var waterDisplay = waterProgress;
     //check if mL or L
     if (waterProgress > 999) {
-      waterIncrement = "L"
+      waterUnit = "L"
       waterDisplay = waterProgress/1000;
     }
     //adjust display
-    document.getElementById("progress").innerHTML = waterDisplay + waterIncrement;
+    document.getElementById("progress").innerHTML = waterDisplay + waterUnit;
     //Check if goal has been reached
     if (waterProgress >= waterGoal) {
       document.getElementById("reachgoal").innerHTML = "Goal Reached, great job!";
@@ -87,7 +77,8 @@
     waterProgress = 0;
     waterGoal = 2500;
     displayProgress();
-    // hide the form
+    displayGoal();
+    // hide the water form
     document.getElementById("water-form").style.display = "none";
 
   }

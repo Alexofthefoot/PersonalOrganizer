@@ -11,7 +11,7 @@ Goals:
 6) Tracking streaks
 7) Visualize with charts
 
-
+Habits to track
 1) Water 
 2) Sleep
 3) Medication
