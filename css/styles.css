@@ -12,6 +12,7 @@ h1 {
     border-radius: 15px;
 }
 
+
 /* This is for the water section */
 section#water {
     background-color: lightblue;
@@ -24,6 +25,7 @@ form {
     display: none;
 }
 
+
 /* This is for the sleep section */
 section#sleep {
     background-color: lavender;
@@ -31,6 +33,16 @@ section#sleep {
 section#sleep h1 {
     color: rgb(155, 92, 238);
 }
+
+
+/* This is for the med section */
+section#meds {
+    background-color: palegreen;
+}
+section#meds h1 {
+    color: rgb(51, 160, 78);
+}
+
 
 /* This is for the health section */
 section#health {
