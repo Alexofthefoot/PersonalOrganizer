@@ -7,47 +7,30 @@ h1 {
     color: black;
 }
 
-.habit-container {
-    padding: 5px;
-    border-radius: 15px;
-}
+.topnav {
+    background-color: #6C757D;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ADB5BD;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #E9ECEF;
+    color: #6C757D;
+  }
 
-
-/* This is for the water section */
-section#water {
-    background-color: lightblue;
-}
-section#water h1 {
-    color: #3498db;
-}
-
-form {
-    display: none;
-}
-
-
-/* This is for the sleep section */
-section#sleep {
-    background-color: lavender;
-}
-section#sleep h1 {
-    color: rgb(155, 92, 238);
-}
-
-
-/* This is for the med section */
-section#meds {
-    background-color: palegreen;
-}
-section#meds h1 {
-    color: rgb(51, 160, 78);
-}
-
-
-/* This is for the health section */
-section#health {
-    background-color: rgb(222, 136, 165);
-}
-section#health h1 {
-    color: rgb(178, 63, 63);
-}

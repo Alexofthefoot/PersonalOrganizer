@@ -1,10 +1,9 @@
-  localStorage.setItem("lastname", "Smith");
-
+  //Global variables for water section
   var waterGoal = 2500;
   var waterProgress = 0; //store value in mL's, change the increment to L as needed
   var standardIncrement = 250;
   
-  function openForm() {
+  function openWaterForm() {
     //un-hide the form
     document.getElementById("water-form").style.display = "inline";
     //set default form values based on current data
@@ -14,7 +13,7 @@
   }
 
   // Update stored data based on form input. If blank, makes no change
- function closeForm() {  
+ function closeWaterForm() {  
     var goalInput = document.getElementById("form-goal").value;
     if (goalInput != null) {
       waterGoal = parseInt(goalInput);
@@ -72,13 +71,26 @@
       document.getElementById("reachgoal").innerHTML = "";
     }
   }
-
-  function reset() {
+  
+  function resetWater() {
     waterProgress = 0;
     waterGoal = 2500;
     displayProgress();
     displayGoal();
     // hide the water form
     document.getElementById("water-form").style.display = "none";
+  }
 
+  function mindfulnessEdit() {
+    
+  }
+  
+  function reset() {
+
+  }
+
+
+  function drawCard() {
+    // replace 'daily card' placeholder with actual card (eventually will be randomized)
+    document.getElementById("daily-card").innerHTML = "Daily card: Ace of Swords";
   }

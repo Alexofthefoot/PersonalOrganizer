@@ -1,0 +1,51 @@
+.habit-container {
+    padding: 5px;
+    border-radius: 15px;
+}
+
+
+/* This is for the water section */
+section#water {
+    background-color: lightblue;
+}
+section#water h1 {
+    color: #3498db;
+}
+
+form {
+    display: none;
+}
+
+
+/* This is for the sleep section */
+section#sleep {
+    background-color: lavender;
+}
+section#sleep h1 {
+    color: rgb(155, 92, 238);
+}
+
+
+/* This is for the med section */
+section#meds {
+    background-color: palegreen;
+}
+section#meds h1 {
+    color: rgb(51, 160, 78);
+}
+
+/* This is for the mindfulness section */
+section#mindfulness {
+    background-color: rgb(216, 183, 224);
+}
+section#mindfulness h1 {
+    color: rgb(127, 21, 141);
+}
+
+/* This is for the health section */
+section#health {
+    background-color: rgb(222, 136, 165);
+}
+section#health h1 {
+    color: rgb(178, 63, 63);
+}
