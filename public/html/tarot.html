@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarot</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/tarot.js"></script>
 </head>
+
 <body>
     <div class="topnav">
         <a href="../index.html">Homepage</a>
@@ -15,7 +17,39 @@
         <a href="#">Bullet Journaling</a>
         <a href="#links">Links</a>
         <a href="#wishlist">Wishlist</a>
-
       </div>
+
+      <div class="add-cards">
+      <form id="tarot-new-card">
+        <label for="numbers">Choose a Number:</label>
+        <select id="numbers" name="numbers">
+            <option value="0"></option>
+            <option value="1">Ace</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+            <option value="6">Six</option>
+            <option value="7">Seven</option>
+            <option value="8">Eight</option>
+            <option value="9">Nine</option>
+            <option value="10">Ten</option>
+            <option value="11">Page</option>
+            <option value="12">Knight</option>
+            <option value="13">Queen</option>
+            <option value="14">King</option>
+        </select><br>
+
+        <label for="suits">Choose a suit:</label>
+        <select id="suits" name="suits">
+            <option value="0"></option>
+            <option value="pentacles">Pentacles</option>
+            <option value="cups">Cups</option>
+            <option value="swords">Swords</option>
+            <option value="wands">Wands</option>
+        </select>
+        <button type="submit">Add Card</button>
+      </form>
+    </div>
 </body>
 </html>

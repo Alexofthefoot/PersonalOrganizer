@@ -25,14 +25,41 @@ db.connect((err) => {
 // Serve static files (like your existing HTML, CSS, JS) from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 // Route for the homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+
+/*
+pentacles
+
+
+
+*/
+// Route to add a new habit
+app.post('/add-card', (req, res) => {
+    console.log(req)
+    
+    const numbers = req.body.numbers;
+    const suits = req.body.suits
+    // Insert the new habit into the database
+    const query = 'INSERT INTO Cards (Quantity, Suit) VALUES (?, ?)';
+    db.query(query, [numbers, suits], (err, results) => {
+        if (err) {
+            console.error('Error inserting data:', err);
+            return res.status(500).json({ error: 'Error adding card' });
+        }
+        res.json({ message: 'Card added successfully!' });
+    });
+});
+
 // Example route to fetch data from the database
 app.get('/data', (req, res) => {
-    const query = 'SELECT * FROM your_table_name'; // Replace with your table name
+    const query = 'SELECT * FROM Cards';
     db.query(query, (err, results) => {
         if (err) {
             return res.status(500).send('Database query failed');
