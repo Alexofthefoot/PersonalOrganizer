@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/wardrobe.css">
 </head>
 <body>
     <div class="topnav">
@@ -13,9 +14,75 @@
         <a class="active" href="#">Wardrobe Tracker</a>
           <a href="projects.html">Project Tracker</a>
           <a href="#">Bullet Journaling</a>
-          <a href="#links">Links</a>
-          <a href="#wishlist">Wishlist</a>
-
+          <a href="#">Links</a>
+          <a href="#w">Wishlist</a>
       </div>
+
+      
+      <h4>Enter new purchases here:</h4>
+      <div class="forms">
+      <form id="add-new-article">
+        <label for="name">Item name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price"><br>
+
+        <!-- <label for="store"></label>
+        <input type="radio"> -->
+
+        <label for="category">Item Category:</label>
+        <select type="select" id="category" required>
+            <option disabled selected></option>
+            <option value="tops">Shirts & tops</option>
+            <option value="bottoms">Bottoms (pants, shorts, skirts)</option>
+            <option value="underwear">Underwear</option>
+            <option value="base-layer">Base Clothing (camisoles, tights, bodysuit)</option>
+            <optgroup>test</optgroup>
+            <option value="dresses">Dresses</option>
+            <option value="accessory">Accessory (Scarves, hats, purses, umbrella)</option>
+            <option value="warmth">Warmth layer (sweaters)</option>
+            <option value="outer">Outerlayer (coats)</option>
+            <option value="shoes">Shoes</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="other">Other</option>
+        </select><br>
+        <label for="city">Current City:</label>
+        <select id="city">
+            <option value="Vancouver">Vancouver</option>
+        </select><br>
+
+        <p>Where did the item come from?</p>  
+        <label for="thrifted">Thrifted or secondhand</label>
+        <input type="radio" id="thrifted" name="got_from" value="thrift">
+        <label for="diy">DIY or homemade</label>
+        <input type="radio" id="diy" name="got_from" value="diy">    
+        <label for="javascript">Bought new</label>
+        <input type="radio" id="new" name="got_from" value="new">
+
+        <label for="purchase-date">Date of purchase:</label>
+        <input type="date" id="purchase-date">
+        <label for="notes">Notes</label>
+        <textarea id="notes"></textarea>
+        <button type="submit">Submit</button>
+      </form></div>
+
+
+
+      <h4>Log clothing usage here:</h4>
+      <form id="log-wears">
+        
+        <input type="text">
+      </form>
+
+
+
+
+      <h4>Use existing items to create a new outfit here:</h4>
+      <form id="add-new-outfit">
+
+      </form>
+
+      <a href="wardrobe/owned-items.html">See closet</a>
 </body>
 </html>

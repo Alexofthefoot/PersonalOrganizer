@@ -1,0 +1,78 @@
+/* input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  } */
+
+  /* General form styling */
+/* General container for all forms */
+.form-container {
+    display: flex; /* Flexbox to arrange forms side by side */
+    justify-content: space-between; /* Space between the forms */
+    margin: 20px;
+}
+
+/* Form styling remains the same */
+form {
+    width: 300px;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Reapplying the same styling for input, labels, and buttons */
+label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+select, textarea {
+    width: 100%;
+}
+
+/* textarea {
+    /* height: 60px;
+    width: 100%;
+    resize: none; 
+} */
+
