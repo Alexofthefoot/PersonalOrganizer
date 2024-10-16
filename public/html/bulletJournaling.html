@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Habit Tracker</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/bulletjournaling.css">
+        <script defer src="../js/main.js"></script> <!-- it will load after the body -->
+    </head>
+    
+    <body>
+        <div class="topnav">
+            <a  href="../index.html">Homepage</a>
+            <a href="tarot.html">Tarot</a>
+            <a href="wardrobe.html">Wardrobe Tracker</a>
+              <a href="projects.html">Project Tracker</a>
+              <a class="active" href="bulletJournaling.html">Bullet Journaling</a>
+              <a href="#links">Links</a>
+              <a href="#wishlist">Wishlist</a>
+
+          </div>
+          <h1>Alex's Habits</h1>
+        <!-- <section>
+            <button class="theme" id="theme">theme button</button>
+        </section> -->
+        
+        <section class="habit-container" id="water">
+            <div class="habit">
+                <h1>Water Intake</h1>
+                <h4>Goal:</h4>
+                <p id="goal">2.5L</p>
+
+                <h4>Current Progress:</h4>
+                <p id="progress">0mL</p>
+                <p id="reachgoal"></p>
+                
+                <button type="button" onclick="increaseProgress()">Drink</button>
+                <button type="button" onclick="openWaterForm()">Edit</button>
+                <button type="reset" onclick="resetWater()">Reset</button>
+                <form id="water-form">
+                    <p>This is the edit area! It is in progress.</p>
+                    <label for="form-goal">Goal (in mL):</label><br>
+                    <input type="number" id="form-goal" name="goal" min="0"><br>
+                    <label for="form-prog">Current Progress:</label><br>
+                    <input type="number" id="form-prog" name="prog" min="0"><br>
+                    <label for="form-incr">Increment by:</label><br>
+                    <input type="number" id="form-incr" min="0"><br>
+                    <button type="button" onclick="closeWaterForm()">Done</button>
+                </form>
+            </div>
+        </section>
+
+       
+
+        <section class="habit-container" id="mindfulness">
+            <h1>Mindfulness</h1>
+            
+            <p id="daily-card">Daily card: None</p>
+            <p id="journal-status">Journaling: Not yet</p>
+            <p id="book-reading">Read a book: No</p>
+
+            <form id="mindfulness-form" style="display: inline;">
+                <p>--start of form--</p>
+                <label for="daily-card">Daily card draw:</label><br>
+                <input type="text" id="daily-card"><br>
+                <input type="checkbox" id="">
+                <label>Journaling</label>
+                <input type="checkbox" id="">
+                <label>Reading</label><br>
+                <button type="button">Done</button>
+                <p>--end of form--</p>
+            </form>    
+            <br>
+            <button type="button" onclick="drawCard()">'Random' Card</button>
+            <button type="button" onclick="openForm()">Edit</button>
+            <button type="button" onclick="reset()">Reset</button>
+        </section>
+
+
+
+
+
+
+
+        <section class="habit-container" id="meds">
+            <h1>Medication</h1>
+    
+            <h4>Over-the-counter:</h4>
+            <input type="checkbox" name="multi" id="multivitamin">
+            <label for="multi">Multivitamin</label>
+            <input type="checkbox" name="fiber" id="fiber">
+            <label for="fiber">Supplement</label>
+
+            <h4>Prescription:</h4>
+            <input type="checkbox" name="seroquel" id="seroquel">
+            <label for="seroquel">Bedtime meds</label>
+            <input type="checkbox" name="ritalin" id="ritalin">
+            <label for="ritalin">Daytime meds</label>
+    
+            <!-- <input type="submit" value="Submit"> -->
+        </section>
+
+        <!-- Needs: # of hours, time sleep/wake, sleep quality, dream y/n, nap -->
+        <section class="habit-container" id="sleep">
+            <h1>Sleep & Dreams</h1>
+                <p>Goal:</p>
+                <p id="goal">8hr</p>
+
+                <label for="sleep-hours">Slept how many hours?</label><br>
+                <input type="number" id="sleep-hours" min="0">
+                <p>Actual:</p><p>9hr</p>
+                <p>How was your sleep quality?</p>
+            
+                <input type="radio" id="bad-sleep" name="sleep-quality" value="bad">
+                <label for="bad-sleep">Bad</label><br>
+                <input type="radio" id="ok-sleep" name="sleep-quality" value="ok">
+                <label for="ok-sleep">Ok/good</label><br>
+                <input type="radio" id="good-sleep" name="sleep-quality" value="great">
+                <label for="good-sleep">Great</label><br><br>
+
+                <input type="submit" value="Submit">
+        </section>
+
+        <section class="habit-container" id="health">
+            <h1>Health & Activity</h1>
+                <p>This section is in progress.</p>
+
+        </section>
+
+    </body>
+</html>
