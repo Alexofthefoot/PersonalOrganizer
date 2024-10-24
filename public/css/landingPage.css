@@ -15,6 +15,13 @@ body {
     margin: 0 auto;
 }
 
+/* Profile Picture */
+#aboutMe img {
+    max-width: 30%;
+    max-height: 30%;
+    border-radius: 50%;
+}
+
 /* Section Titles */
 h2 {
     color: #495057;
@@ -47,7 +54,7 @@ section {
     background-color: #E9ECEF;
     padding: 15px;
     border-radius: 8px;
-    width: calc(30% - 20px);
+    width: calc(30%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
