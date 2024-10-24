@@ -22,6 +22,9 @@ db.connect((err) => {
     console.log('Connected to the MySQL database');
 });
 
+// Export the db object
+module.exports = db;
+
 // Serve static files (like your existing HTML, CSS, JS) from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -34,12 +37,6 @@ app.get('/', (req, res) => {
 });
 
 
-/*
-pentacles
-
-
-
-*/
 // Route to add a new habit
 app.post('/add-card', (req, res) => {
     console.log(req)
@@ -47,8 +44,8 @@ app.post('/add-card', (req, res) => {
     const numbers = req.body.numbers;
     const suits = req.body.suits
     // Insert the new habit into the database
-    const query = 'INSERT INTO Cards (Quantity, Suit) VALUES (?, ?)';
-    db.query(query, [numbers, suits], (err, results) => {
+    const query = 'INSERT INTO cards (deck_id, arcana, card_name, card_value) VALUES (1, "Minor", ?, ?)';
+    db.query(query, [card_value, suits], (err, results) => {
         if (err) {
             console.error('Error inserting data:', err);
             return res.status(500).json({ error: 'Error adding card' });
