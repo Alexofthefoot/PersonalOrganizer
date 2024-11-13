@@ -1,11 +1,4 @@
-/* input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  } */
-
-  /* General form styling */
+/* General form styling */
 /* General container for all forms */
 .form-container {
     display: flex; /* Flexbox to arrange forms side by side */
@@ -70,9 +63,39 @@ select, textarea {
     width: 100%;
 }
 
-/* textarea {
-    /* height: 60px;
-    width: 100%;
-    resize: none; 
-} */
+/* Container to hold the left and right sections */
+.container {
+    display: flex;                /* Displays the sections side-by-side */
+    justify-content: space-between; /* Adds space between the two sections */
+    align-items: stretch;
+    gap: 20px;                     /* Optional, space between the sections */
+    padding: 20px;
+  }
+  
+  /* Styling for the left section (general stats) */
+  .stats {
+    background: linear-gradient(135deg, #fd79a8, #ff9b9b); /* Another gradient */
+  }
+  .stats, .highlight, .recents {
+    flex: 1;                     /* Takes up available space */
+    padding: 20px;
+    border-radius: 8px;           /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Styling for the middle section (highlight of the day) */
+  .highlight {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe); /* Gradient background */
+    color: white;                /* White text for contrast */
+  }
+  
+  .recents {
+    background: linear-gradient(135deg, #00cec9, #81ecec); /* Teal gradient */
+    color: white; /* White text for readability */
+  }
 
+  /* Optional: Title styling */
+  h2 {
+    margin-bottom: 10px;         /* Space between title and content */
+    font-size: 1.5em;
+  }
