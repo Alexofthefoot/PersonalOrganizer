@@ -1,4 +1,4 @@
-/* General form styling */
+/* Form styling */
 /* General container for all forms */
 .form-container {
     display: flex; /* Flexbox to arrange forms side by side */
@@ -63,7 +63,11 @@ select, textarea {
     width: 100%;
 }
 
-/* Container to hold the left and right sections */
+
+
+/* Highlight Sections (3 coloured boxes) */
+
+/* Container to hold the highlight sections */
 .container {
     display: flex;                /* Displays the sections side-by-side */
     justify-content: space-between; /* Adds space between the two sections */
@@ -72,7 +76,6 @@ select, textarea {
     padding: 20px;
   }
   
-  /* Styling for the left section (general stats) */
   .stats {
     background: linear-gradient(135deg, #fd79a8, #ff9b9b); /* Another gradient */
   }
@@ -86,16 +89,38 @@ select, textarea {
   /* Styling for the middle section (highlight of the day) */
   .highlight {
     background: linear-gradient(135deg, #6c5ce7, #a29bfe); /* Gradient background */
-    color: white;                /* White text for contrast */
+    color: white; 
   }
   
   .recents {
     background: linear-gradient(135deg, #00cec9, #81ecec); /* Teal gradient */
-    color: white; /* White text for readability */
+    color: white; 
   }
 
-  /* Optional: Title styling */
   h2 {
-    margin-bottom: 10px;         /* Space between title and content */
+    margin-bottom: 10px;
     font-size: 1.5em;
+  } 
+
+  /* Buttons */
+  /* Button grid layout */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts based on screen width */
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .function-button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c5ce7;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .function-button:hover {
+    background-color: #a29bfe;
   }
