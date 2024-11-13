@@ -1,16 +1,21 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql2');
 const app = express();
 const port = 3000;
 
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
 // Database connection setup
 const db = mysql.createConnection({
-    host: 'alexgeneraldb-do-user-15427317-0.m.db.ondigitalocean.com',
-    user: 'doadmin',
-    password: 'AVNS_KLnDwRMV3gE_7Urv9o3', 
-    database: 'ALEX',
-    port: 25060
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
 });
 
 // Connect to the database
@@ -38,29 +43,31 @@ app.get('/', (req, res) => {
 
 
 // Route to add a new habit
-app.post('/add-card', (req, res) => {
-    console.log(req)
+// app.post('/add-card', (req, res) => {
+//     console.log(req)
     
-    const numbers = req.body.numbers;
-    const suits = req.body.suits
-    // Insert the new habit into the database
-    const query = 'INSERT INTO cards (deck_id, arcana, card_name, card_value) VALUES (1, "Minor", ?, ?)';
-    db.query(query, [card_value, suits], (err, results) => {
-        if (err) {
-            console.error('Error inserting data:', err);
-            return res.status(500).json({ error: 'Error adding card' });
-        }
-        res.json({ message: 'Card added successfully!' });
-    });
-});
+//     const numbers = req.body.numbers;
+//     const suits = req.body.suits
+//     // Insert the new habit into the database
+//     const query = 'INSERT INTO cards (deck_id, arcana, card_name, card_value) VALUES (1, "Minor", ?, ?)';
+//     db.query(query, [card_value, suits], (err, results) => {
+//         if (err) {
+//             console.error('Error inserting data:', err);
+//             return res.status(500).json({ error: 'Error adding card' });
+//         }
+//         res.json({ message: 'Card added successfully!' });
+//     });
+// });
 
 // Example route to fetch data from the database
 app.get('/data', (req, res) => {
-    const query = 'SELECT * FROM Cards';
+    const query = 'SELECT * FROM wardrobe_cities';
     db.query(query, (err, results) => {
         if (err) {
+            console.error('Database query failed:', err);  // Log the exact error
             return res.status(500).send('Database query failed');
         }
+        // console.log(results);
         res.json(results); // Send the results as a JSON response
     });
 });

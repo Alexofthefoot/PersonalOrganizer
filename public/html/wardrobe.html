@@ -18,6 +18,23 @@
           <a href="#w">Wishlist</a>
       </div>
 
+      <h1>Wardrobe Cities</h1>
+      <ul id="cities-list"></ul>
+      <script>
+        // Fetch data from the server when the page loads
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('cities-list');
+                // Create list items for each item in the data array
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item.city_name; // Assuming 'city_name' is a column
+                    list.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
       
       <h4>Enter new purchases here:</h4>
       <div class="forms">
