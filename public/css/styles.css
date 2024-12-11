@@ -1,40 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #F8F9FA;
-    color: #343A40;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #F8F9FA;
+  color: #343A40;
 }
 
 h1 {
-    color: black;
+  color: black;
 }
 
 .topnav {
-    background-color: #6C757D;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 20px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ADB5BD;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #E9ECEF;
-    color: #6C757D;
-  }
+  background-color: #6C757D;
+  overflow: hidden;
+}
 
+.topnav a {
+  float: left;
+  color: #F8F9FA;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ADB5BD;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #E9ECEF;
+  color: #6C757D;
+}

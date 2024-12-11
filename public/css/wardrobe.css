@@ -1,28 +1,26 @@
 /* Form styling */
 /* General container for all forms */
 .form-container {
-    display: flex; /* Flexbox to arrange forms side by side */
-    justify-content: space-between; /* Space between the forms */
-    margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 
-/* Form styling remains the same */
 form {
-    width: 300px;
-    margin: 0 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  width: 300px;
+  margin: 0 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-/* Reapplying the same styling for input, labels, and buttons */
 label {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    margin-top: 10px;
-    display: block;
-    color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+  color: #333;
 }
 
 input[type="text"],
@@ -30,97 +28,102 @@ input[type="number"],
 input[type="date"],
 select,
 textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
 
 button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 3px;
-    margin-top: 10px;
-    width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 input[type="checkbox"] {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
-select, textarea {
-    width: 100%;
+select,
+textarea {
+  width: 100%;
 }
 
 
 
 /* Highlight Sections (3 coloured boxes) */
 
-/* Container to hold the highlight sections */
 .container {
-    display: flex;                /* Displays the sections side-by-side */
-    justify-content: space-between; /* Adds space between the two sections */
-    align-items: stretch;
-    gap: 20px;                     /* Optional, space between the sections */
-    padding: 20px;
-  }
-  
-  .stats {
-    background: linear-gradient(135deg, #fd79a8, #ff9b9b); /* Another gradient */
-  }
-  .stats, .highlight, .recents {
-    flex: 1;                     /* Takes up available space */
-    padding: 20px;
-    border-radius: 8px;           /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  }
-  
-  /* Styling for the middle section (highlight of the day) */
-  .highlight {
-    background: linear-gradient(135deg, #6c5ce7, #a29bfe); /* Gradient background */
-    color: white; 
-  }
-  
-  .recents {
-    background: linear-gradient(135deg, #00cec9, #81ecec); /* Teal gradient */
-    color: white; 
-  }
+  display: flex;
+  justify-content: space-between;
+  /* Adds space between the two sections */
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px;
+}
 
-  h2 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-  } 
+.stats,
+.highlight,
+.recents {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  background: #E9ECEF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  /* Buttons */
-  /* Button grid layout */
+.stats:hover,
+.highlight:hover,
+.recents:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+
+
+/* Link buttons */
 .button-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts based on screen width */
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .function-button {
-    padding: 10px;
-    font-size: 16px;
-    color: white;
-    background-color: #6c5ce7;
-    border: none;
-    border-radius: 8px;
-    transition: background 0.3s;
-  }
-  
-  .function-button:hover {
-    background-color: #a29bfe;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* Adjusts based on screen width */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.function-button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #1B3A4B;
+  color: white;
+  background: linear-gradient(135deg, #6C757D, #8b939a);
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.function-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ADB5BD, #E9ECEF);
+}
