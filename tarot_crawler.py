@@ -1,6 +1,10 @@
 # === Imports === #
+import io
 import requests
 import pandas as pd
+import hashlib
+from PIL import Image
+from pathlib import Path
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
@@ -9,20 +13,37 @@ from selenium.webdriver import ChromeOptions
 BASE_URL = "https://sacred-texts.com/tarot/xr/index.htm"
 
 # === Function Definitions === #
+# Visits each page and stores the img address
+def extract_images(images):
+    for i in images:
+        image_content = requests.get(i).content
+        image_file = io.BytesIO(image_content)
+        image = Image.open(image_file).convert("RGB")
+        file_path = Path("images/crawler/", hashlib.sha1(image_content).hexdigest()[:10] + ".png")
+        image.save(file_path, "PNG", quality=80)
+    
+    
 def scrape_images(urls):
+    images = []
     options = ChromeOptions()
     options.add_argument("--headless=new")
     driver = webdriver.Chrome(options=options)
     #driver = webdriver.Chrome()
-    for link in urls:
-        driver.get(f"https://sacred-texts.com/tarot/xr/{link}")
-        results = []
+    for url in urls:
+        driver.get(f"https://sacred-texts.com/tarot/xr/{url}")
         content = driver.page_source
         soup = BeautifulSoup(content, "html.parser")
-        title = soup.select_one('h1')
-        print(title.text)
-
+        parent_el = soup.find("table") #ancestor element
+        el = parent_el.parent.find("img") #the target element
+        src = el.get("src") #element src
+        if src not in images:
+            address = src.replace("../","https://sacred-texts.com/tarot/")
+            images.append(address)
+    return images
     
+
+
+# Collects the url extentions for each card page
 def scrape_urls():
     urls = []
 
@@ -34,22 +55,23 @@ def scrape_urls():
             urls.append(href)
     return urls
 
-def save_to_file(urls):
-    with open("cards.txt", "w") as f:
-        for url in urls:
-            f.write(url + "\n")
+def save_to_file(images):
+    with open("images.txt", "w") as f:
+        for image in images:
+            f.write(image + "\n")
     
 # === Main Function === #
 def main():
     print("Starting scraper...")
     urls = scrape_urls()
     print(len(urls), "Urls found.")
-    save_to_file(urls)
-    print("Saved to file.")
+   
     print("Visiting webpages...")
-    scrape_images(urls)
-    
-    
+    images = scrape_images(urls)
+    print("Storing addresses in images.txt")
+    save_to_file(images)
+    print("extracting images")
+    extract_images(images)
     
 
 # === Script Entry Point === #
