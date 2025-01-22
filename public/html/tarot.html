@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarot</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/tarot.css">
     <script defer src="../js/tarot.js"></script>
 </head>
 
@@ -14,47 +15,25 @@
         <a class="active" href="tarot.html">Tarot</a>
         <a href="wardrobe.html">Wardrobe Tracker</a>
         <a href="projects.html">Project Tracker</a>
-        <a href="bulletJournaling.html">Bullet Journaling</a>
+        <a href="#">Bullet Journaling</a>
         <a href="#">Links</a>
         <a href="#">Wishlist</a>
       </div>
 
-      <div class="quick-stats">
-        <p>Date of last reading:</p><p id="days-since">***</p><hr>
-        <img src="/i">
-      </div>
-
-      <div class="add-cards">
-      <form id="tarot-new-card">
-        <label for="numbers">Choose a Number:</label>
-        <select id="numbers" name="numbers">
-            <option value="0"></option>
-            <option value="1">Ace</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Four</option>
-            <option value="5">Five</option>
-            <option value="6">Six</option>
-            <option value="7">Seven</option>
-            <option value="8">Eight</option>
-            <option value="9">Nine</option>
-            <option value="10">Ten</option>
-            <option value="11">Page</option>
-            <option value="12">Knight</option>
-            <option value="13">Queen</option>
-            <option value="14">King</option>
-        </select><br>
-
-        <label for="suits">Choose a suit:</label>
-        <select id="suits" name="suits">
-            <option value="0"></option>
-            <option value="pentacles">Pentacles</option>
-            <option value="cups">Cups</option>
-            <option value="swords">Swords</option>
-            <option value="wands">Wands</option>
-        </select>
-        <button type="submit" onclick="insertTarotReading()">Add Card</button>
-      </form>
+      <div class="container">
+        <div class="new-digital-prompt">
+            <p>Start a new digital reading</p>
+            <a href="tarot/new-reading.html">here</a>
+        </div>
+        <div class="new-irl-prompt">
+            <p>Log a real-world prompt</p>
+        </div>
+        <div class="trends">
+            <p>Explore Trends</p>
+        </div>
+        <div class="old-prompts">
+            <p>View old prompts here</p>
+        </div>
     </div>
 </body>
 </html>
