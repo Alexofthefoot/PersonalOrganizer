@@ -6,8 +6,8 @@ const mysql = require('mysql2');
 const app = express();
 const port = 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Database connection setup
 const db = mysql.createConnection({
@@ -29,9 +29,6 @@ db.connect((err) => {
 
 // Export the db object
 module.exports = db;
-
-// Serve static files (like your existing HTML, CSS, JS) from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware to parse JSON bodies
 app.use(express.json());
