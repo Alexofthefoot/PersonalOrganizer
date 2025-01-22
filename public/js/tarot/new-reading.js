@@ -1,5 +1,8 @@
 var num_cards;
+var card1 = document.getElementById('card1')
 
-function num_of_cards() {
-    
+
+function flipCard1() {
+    console.log("flipCard1 triggered");
+    document.getElementById('card1').style.display = "none";
 }

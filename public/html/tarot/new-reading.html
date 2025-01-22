@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="../../css/styles.css">
-    <script defer src="../js/tarot/new-reading.js"></script> <!-- it will load after the body -->
+    <script defer src="../../js/tarot/new-reading.js"></script> <!-- it will load after the body -->
 
 </head>
 <body>
@@ -24,9 +24,13 @@
       <button>5 cards</button>
 
       <div id="reading">
-        <img src="../../images/cards/ar00.png" width="20%">
-        <img src="../../images/cards/ar01.png" width="20%">
-        <img src="../../images/cards/ar02.png" width="20%">
+        <!-- <a href="http://www.google.com" target="_blank">
+            <img src="../../images/cards/ar00.png" />
+        </a> -->
+        
+        <img id="card1" src="../../images/cards/ar00.png" width="15%" onclick="flipCard1()">
+        <img src="../../images/cards/ar01.png" width="15%">
+        <img src="../../images/cards/ar02.png" width="15%">
 
       </div>
 
