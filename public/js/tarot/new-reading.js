@@ -1,8 +1,12 @@
 var num_cards;
-var card1 = document.getElementById('card1')
 
+function deal_cards() {
 
-function flipCard1() {
-    console.log("flipCard1 triggered");
-    document.getElementById('card1').style.display = "none";
+}
+
+function flipCard(num) {
+    var id= 'card' + num
+    console.log("flipCard triggered");
+    // document.getElementById(id).style.display = "none";
+    document.getElementById(id).src = "../../../images/cards/ar01.png"
 }
