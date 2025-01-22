@@ -12,23 +12,25 @@ from selenium.webdriver import ChromeOptions
 # === Constants === #
 BASE_URL = "https://sacred-texts.com/tarot/xr/index.htm"
 
+
 # === Function Definitions === #
-# Visits each page and stores the img address
+# Downloads the img
 def extract_images(images):
     for i in images:
+        
         image_content = requests.get(i).content
         image_file = io.BytesIO(image_content)
         image = Image.open(image_file).convert("RGB")
-        file_path = Path("images/crawler/", hashlib.sha1(image_content).hexdigest()[:10] + ".png")
+        card_name = i[39:43]
+        file_path = Path("images/crawler/" +card_name+ ".png")
         image.save(file_path, "PNG", quality=80)
     
-    
-def scrape_images(urls):
+# Visit each card page and save the src address for img
+def collect_images(urls):
     images = []
     options = ChromeOptions()
     options.add_argument("--headless=new")
     driver = webdriver.Chrome(options=options)
-    #driver = webdriver.Chrome()
     for url in urls:
         driver.get(f"https://sacred-texts.com/tarot/xr/{url}")
         content = driver.page_source
@@ -39,12 +41,13 @@ def scrape_images(urls):
         if src not in images:
             address = src.replace("../","https://sacred-texts.com/tarot/")
             images.append(address)
+    driver.quit()
     return images
     
 
 
 # Collects the url extentions for each card page
-def scrape_urls():
+def collect_urls():
     urls = []
 
     response = requests.get(BASE_URL)
@@ -54,24 +57,18 @@ def scrape_urls():
         if len(href) == 8:
             urls.append(href)
     return urls
-
-def save_to_file(images):
-    with open("images.txt", "w") as f:
-        for image in images:
-            f.write(image + "\n")
     
 # === Main Function === #
 def main():
     print("Starting scraper...")
-    urls = scrape_urls()
+    urls = collect_urls()
     print(len(urls), "Urls found.")
-   
-    print("Visiting webpages...")
-    images = scrape_images(urls)
-    print("Storing addresses in images.txt")
-    save_to_file(images)
+    print("Visiting webpages. This may take a moment...")
+    images = collect_images(urls)
+ 
     print("extracting images")
     extract_images(images)
+    print("Done")
     
 
 # === Script Entry Point === #
