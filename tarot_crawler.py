@@ -22,7 +22,7 @@ def extract_images(images):
         image_file = io.BytesIO(image_content)
         image = Image.open(image_file).convert("RGB")
         card_name = i[39:43]
-        file_path = Path("images/crawler/" +card_name+ ".png")
+        file_path = Path("public/images/" + card_name + ".png")
         image.save(file_path, "PNG", quality=80)
     
 # Visit each card page and save the src address for img
