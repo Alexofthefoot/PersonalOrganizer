@@ -48,3 +48,10 @@ function changeHandSize(num) {
         }
     }      
 }
+function resetHand() {
+    for (let i = 1; i <= 5; i++){
+        document.getElementById("card" + i).src = "../../images/card back black.png"
+        currentCards[i-1] = ""     
+    }   
+    console.log(currentCards)   
+}
