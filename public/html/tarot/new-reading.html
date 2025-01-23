@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/new-reading.css">
     <script defer src="../../js/tarot/new-reading.js"></script> <!-- it will load after the body -->
 
 </head>
@@ -23,23 +24,16 @@
       <button onclick="changeHandSize(1)">1 Card</button>
       <button onclick="changeHandSize(3)">3 Cards</button>
       <button onclick="changeHandSize(5)">5 cards</button>
-
-      <div id="reading">
-        <!-- <a href="http://www.google.com" target="_blank">
-            <img src="../../images/cards/ar00.png" />
-        </a> -->
+      
+    <div id="reading-container">
+        <img id="card1" src="../../images/card back black.png" onclick="flipCard('1');">
+        <img id="card2" src="../../images/card back black.png"  onclick="flipCard('2');">
+        <img id="card3" src="../../images/card back black.png" onclick="flipCard('3');">
+        <img id="card4" src="../../images/card back black.png" onclick="flipCard('4');" style="display: none;">
+        <img id="card5" src="../../images/card back black.png" onclick="flipCard('5');" style="display: none;">
+    </div>
         
-        <div width="15%">
-            <img id="card1" src="../../images/card back black.png" width="15%" onclick="flipCard('1');">
-            <img id="card2" src="../../images/card back black.png" width="15%" onclick="flipCard('2');">
-            <img id="card3" src="../../images/card back black.png" width="15%" onclick="flipCard('3');">
-            <img id="card4" src="../../images/card back black.png" width="15%" onclick="flipCard('4');" style="display: none;">
-            <img id="card5" src="../../images/card back black.png" width="15%" onclick="flipCard('5');" style="display: none;">
-        </div>
-        <style>
-            /* img {width:"100px" } */
-        </style>
-      </div>
+
 
 
 </body>
