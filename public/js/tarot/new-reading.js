@@ -1,6 +1,7 @@
-var num_cards;
-let currentCards = ["", "", "", "", ""]
+var num_cards = 3; 
+var currentCards = ["", "", "", "", ""]
 
+// Randomly selects one new card (no repeats) and returns it 
 function deal_card() {
     var dealt_card
     // Randomize suit
@@ -20,15 +21,27 @@ function deal_card() {
     return dealt_card
 }
 
+// Flips or refreshes the card that was clicked 
 function flipCard(num) {
     var id= 'card' + num
-    console.log("flipCard triggered");
-    // document.getElementById(id).style.display = "none";
+    // console.log("flipCard triggered");
     newcard = deal_card()
     currentCards[num-1] = newcard
     document.getElementById(id).src = "../../../images/cards/" + newcard + ".png"
 }
 
-// function hand_size(num) {
-
-// }
+function changeHandSize(num) {
+    num_cards = num;
+    for (let i = 1; i <= 5; i++){
+        if (i <= num_cards) {
+            // make visible
+            console.log("make "+ i + "visible")
+            document.getElementById("card"+ i).style.display = "inline";
+        }
+        else {
+            // make invisible
+            console.log("make "+ i + "invisible")
+            document.getElementById("card" + i).style.display = "none";
+        }
+    }      
+}
