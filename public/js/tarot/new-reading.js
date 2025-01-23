@@ -27,6 +27,7 @@ function flipCard(num) {
     // console.log("flipCard triggered");
     newcard = deal_card()
     currentCards[num-1] = newcard
+    console.log(currentCards)
     document.getElementById(id).src = "../../../images/cards/" + newcard + ".png"
 }
 
@@ -39,9 +40,11 @@ function changeHandSize(num) {
             document.getElementById("card"+ i).style.display = "inline";
         }
         else {
-            // make invisible
+            // make invisible & remove from hand
             console.log("make "+ i + "invisible")
             document.getElementById("card" + i).style.display = "none";
+            document.getElementById("card" + i).src = "../../images/card back black.png"
+            currentCards[i-1] = ""
         }
     }      
 }
