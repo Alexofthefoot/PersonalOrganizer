@@ -27,8 +27,7 @@
         <button onclick="changeHandSize(1)">1 Card</button>
         <button onclick="changeHandSize(3)">3 Cards</button>
         <button onclick="changeHandSize(5)">5 cards</button>
-        <button onclick="saveReading()">Save This Reading</button>
-        <p id="user-message" style="display: inline;">Flip over cards to uncover your reading!</p>
+        <p id="user-message1" style="display: inline;">Flip over cards to uncover your reading!</p>
     </div>
 
     <div id="reading-container">
@@ -38,6 +37,14 @@
         <img id="card4" src="../../images/card back black.png" onclick="flipCard('4');" style="display: none;">
         <img id="card5" src="../../images/card back black.png" onclick="flipCard('5');" style="display: none;">
     </div>
+
+   <form id="reading-form" method="POST">
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" required></textarea>
+        <input type="hidden" id="cards_drawn" name="cards_drawn">
+        <button type="submit">Log Reading</button>
+        <p id="user-message2" style="display: inline;"></p>
+    </form>
 
 
 </body>

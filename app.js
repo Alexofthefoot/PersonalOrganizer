@@ -39,24 +39,30 @@ app.get('/', (req, res) => {
 });
 
 
-// Route to add a new habit
-// app.post('/add-card', (req, res) => {
-//     console.log(req)
-    
-//     const numbers = req.body.numbers;
-//     const suits = req.body.suits
-//     // Insert the new habit into the database
-//     const query = 'INSERT INTO cards (deck_id, arcana, card_name, card_value) VALUES (1, "Minor", ?, ?)';
-//     db.query(query, [card_value, suits], (err, results) => {
-//         if (err) {
-//             console.error('Error inserting data:', err);
-//             return res.status(500).json({ error: 'Error adding card' });
-//         }
-//         res.json({ message: 'Card added successfully!' });
-//     });
-// });
+// Route to log tarot readings
+app.post('/api/log-reading', (req, res) => {
+    const { cards_drawn, notes } = req.body;
 
-// Example route to fetch data from the database
+    if (!cards_drawn || !notes) {
+        return res.status(400).json({ success: false, message: 'Missing data' });
+    }
+
+    const query = `
+        INSERT INTO tarot_readings (cards_drawn, notes) 
+        VALUES (?, ?)
+    `;
+
+    db.query(query, [cards_drawn, notes], (err, results) => {
+        if (err) {
+            console.error('Error inserting reading:', err);
+            return res.status(500).json({ success: false, message: 'Database error' });
+        }
+
+        res.json({ success: true, message: 'Reading logged', id: results.insertId });
+    });
+});
+
+// Route to fetch wardrobe data from the database
 app.get('/data', (req, res) => {
     const query = 'SELECT * FROM wardrobe_cities';
     db.query(query, (err, results) => {
@@ -64,7 +70,7 @@ app.get('/data', (req, res) => {
             console.error('Database query failed:', err);  // Log the exact error
             return res.status(500).send('Database query failed');
         }
-        // console.log(results);
+        console.log(results);
         res.json(results); // Send the results as a JSON response
     });
 });
