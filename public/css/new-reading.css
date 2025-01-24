@@ -1,9 +1,10 @@
 #reading-container {
     display: flex;
-    justify-content: center;
+    /* justify-content: center;              Is this better centered?  */
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 10px;  
+
 }
 
 #reading-container img {
@@ -11,3 +12,20 @@
     height: 528px;
 }
 
+#reading-container img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 8px;
+    background: #E9ECEF;
+    border-color: white;
+    box-shadow: white;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+  }
+  
+  

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script defer src="../../js/tarot/new-reading.js"></script> <!-- it will load after the body -->
 
 </head>
+
 <body>
     <div class="topnav">
         <a href="../../index.html">Homepage</a>
@@ -18,23 +20,26 @@
         <a href="../bulletJournaling.html">Bullet Journaling</a>
         <a href="#">Links</a>
         <a href="#">Wishlist</a>
-      </div>
+    </div>
 
-      <button onclick="resetHand()">Reset</button>
-      <button onclick="changeHandSize(1)">1 Card</button>
-      <button onclick="changeHandSize(3)">3 Cards</button>
-      <button onclick="changeHandSize(5)">5 cards</button>
-      
+    <div id=button-container>
+        <button onclick="resetHand()">Reset Cards</button>
+        <button onclick="changeHandSize(1)">1 Card</button>
+        <button onclick="changeHandSize(3)">3 Cards</button>
+        <button onclick="changeHandSize(5)">5 cards</button>
+        <button onclick="saveReading()">Save This Reading</button>
+        <p id="user-message" style="display: inline;">Flip over cards to uncover your reading!</p>
+    </div>
+
     <div id="reading-container">
         <img id="card1" src="../../images/card back black.png" onclick="flipCard('1');">
-        <img id="card2" src="../../images/card back black.png"  onclick="flipCard('2');">
+        <img id="card2" src="../../images/card back black.png" onclick="flipCard('2');">
         <img id="card3" src="../../images/card back black.png" onclick="flipCard('3');">
         <img id="card4" src="../../images/card back black.png" onclick="flipCard('4');" style="display: none;">
         <img id="card5" src="../../images/card back black.png" onclick="flipCard('5');" style="display: none;">
     </div>
-        
-
 
 
 </body>
+
 </html>
