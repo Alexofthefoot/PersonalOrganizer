@@ -30,7 +30,7 @@ db.connect((err) => {
 // Export the db object
 module.exports = db;
 
-// Middleware to parse JSON bodies
+// Middleware to parse JSON
 app.use(express.json());
 
 // Route for the homepage
@@ -62,6 +62,22 @@ app.post('/api/log-reading', (req, res) => {
     });
 });
 
+// Route to get tarot readings
+app.get('/api/get-reading', (req, res) => {
+    const query = `
+        SELECT cards_drawn, notes FROM tarot_readings
+    `;
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error retreiving reading:', err);
+            return res.status(500).json({ success: false, message: 'Database error' });
+        }
+
+        console.log('Database results:', results);  // Debug log
+        res.json({ success: true, message: 'Reading retrieved', id: results.insertId });
+    });
+});
+
 // Route to fetch wardrobe data from the database
 app.get('/data', (req, res) => {
     const query = 'SELECT * FROM wardrobe_cities';
@@ -71,7 +87,7 @@ app.get('/data', (req, res) => {
             return res.status(500).send('Database query failed');
         }
         console.log(results);
-        res.json(results); // Send the results as a JSON response
+        res.json(results);
     });
 });
 
