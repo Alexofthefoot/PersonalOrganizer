@@ -2,6 +2,10 @@
 
 This project began as a simple bullet journal companion but has since grown into a versatile, multifaceted tool. It is designed not only to keep track different areas of my daily life but also to serve as a portfolio piece to showcase my skills to future employers.
 
+**Project Status:**  
+*Project is currently on hold in its current form due to budget constraints.*  
+I started developing this project with the goal of creating an online tool. However, due to the ongoing costs of cloud hosting I was unable to fully implement the intended features. I plan to revisit the project in the future, transitioning it to a local format rather than a cloud-hosted solution. This will allow me to continue developing the functionality at a lower cost. In the meantime, the work completed so far showcases my growing experience with front-end development, and I look forward to revisiting it when I have more time and resources.
+
 ## Features
 The application is a central hub for:
 
